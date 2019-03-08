@@ -1,3 +1,21 @@
 <main>
-  <app-address-form></app-address-form>
+  <section class="box">
+    <h1 class="title">AddressForm 1</h1>
+    <form [formGroup]="parentForm">
+      <app-address-form [parentForm]="parentForm"></app-address-form>
+    </form>
+    <section class="section">
+      {{ parentForm.value | json }}
+    </section>
+  </section>
+  <hr />
+  <section class="box">
+    <h1 class="title">AddressForm 2</h1>
+    <form [formGroup]="parentForm2">
+      <app-address-form [parentForm]="parentForm2"></app-address-form>
+    </form>
+    <section class="section">
+      {{ parentForm2.value | json }}
+    </section>
+  </section>
 </main>

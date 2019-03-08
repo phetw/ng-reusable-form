@@ -1,3 +1,20 @@
-<p>
-  address-form works!
-</p>
+<section class="container" [formGroup]="parentForm">
+  <div formGroupName="addressForm">
+    <label class="label">
+      Street:
+      <input class="input" formControlName="street" />
+    </label>
+    <label class="label">
+      City:
+      <input class="input" formControlName="city" />
+    </label>
+    <label class="label">
+      State:
+      <input class="input" formControlName="state" />
+    </label>
+    <label class="label">
+      Zip:
+      <input class="input" formControlName="zip" />
+    </label>
+  </div>
+</section>
