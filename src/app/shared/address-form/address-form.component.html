@@ -1,5 +1,5 @@
 <section class="container" [formGroup]="parentForm">
-  <div formGroupName="addressForm">
+  <div formGroupName="address">
     <label class="label">
       Company:
       <ng-select
@@ -25,8 +25,36 @@
       <input class="input" formControlName="state" />
     </label>
     <label class="label">
+      Country:
+      <ng-select
+        [items]="country$ | async"
+        [loading]="loading"
+        [searchable]="true"
+        [virtualScroll]="true"
+        (change)="onCountryChange($event)"
+        bindValue="name"
+        bindLabel="name"
+        placeholder="Select country"
+        formControlName="country"
+      >
+      </ng-select>
+    </label>
+    <label class="label">
       Zip:
-      <input class="input" formControlName="zip" />
+      <input
+        class="input"
+        [ngClass]="{ 'is-danger': zip.invalid && (zip.touched || zip.dirty) }"
+        type="tel"
+        maxlength="5"
+        formControlName="zip"
+        required
+      />
+      <p
+        *ngIf="zip.invalid && (zip.touched || zip.dirty)"
+        class="help is-danger"
+      >
+        Invalid zip code
+      </p>
     </label>
   </div>
 </section>
