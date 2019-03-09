@@ -7,15 +7,9 @@
     <section class="section">
       {{ parentForm.value | json }}
     </section>
+    <button class="button is-info" [disabled]="parentForm.invalid">
+      Submit
+    </button>
   </section>
   <hr />
-  <section class="box">
-    <h1 class="title">AddressForm 2</h1>
-    <form [formGroup]="parentForm2">
-      <app-address-form [parentForm]="parentForm2"></app-address-form>
-    </form>
-    <section class="section">
-      {{ parentForm2.value | json }}
-    </section>
-  </section>
 </main>
