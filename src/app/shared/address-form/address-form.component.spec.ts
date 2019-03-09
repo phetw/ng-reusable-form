@@ -1,12 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing"
 
 import { AddressFormComponent } from "./address-form.component"
-import {
-  FormsModule,
-  ReactiveFormsModule,
-  FormGroup,
-  FormBuilder,
-} from "@angular/forms"
+import { ReactiveFormsModule, FormGroup, FormBuilder } from "@angular/forms"
 
 describe("AddressFormComponent", () => {
   let component: AddressFormComponent
@@ -14,7 +9,7 @@ describe("AddressFormComponent", () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule, ReactiveFormsModule],
+      imports: [ReactiveFormsModule],
       declarations: [AddressFormComponent],
     }).compileComponents()
   }))
