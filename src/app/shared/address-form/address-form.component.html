@@ -1,6 +1,18 @@
 <section class="container" [formGroup]="parentForm">
   <div formGroupName="addressForm">
     <label class="label">
+      Company:
+      <ng-select
+        [items]="company"
+        [searchable]="true"
+        [virtualScroll]="true"
+        [loading]="loading"
+        placeholder="Select company"
+        formControlName="company"
+      >
+      </ng-select>
+    </label>
+    <label class="label">
       Street:
       <input class="input" formControlName="street" />
     </label>

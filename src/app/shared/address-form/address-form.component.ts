@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core"
 import { FormGroup, FormBuilder, Validators } from "@angular/forms"
 
+import MockCompanyList from "../../core/mock/company-list.mock"
+
 @Component({
   selector: "app-address-form",
   templateUrl: "./address-form.component.html",
@@ -8,7 +10,9 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms"
 })
 export class AddressFormComponent implements OnInit {
   @Input() parentForm: FormGroup
+
   addressForm: FormGroup
+  company: Array<string> = MockCompanyList
 
   constructor(private _fb: FormBuilder) {}
 
@@ -19,6 +23,7 @@ export class AddressFormComponent implements OnInit {
 
   createAddressFormInstance(): FormGroup {
     return this._fb.group({
+      company: [null, Validators.required],
       street: ["", Validators.required],
       city: ["", Validators.required],
       state: ["", Validators.required],
