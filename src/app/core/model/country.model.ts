@@ -1,4 +1,4 @@
 export interface ICountry {
-  alpha3Code: string
-  name: string
+  alpha3Code: string;
+  name: string;
 }
