@@ -10,7 +10,7 @@ describe('AddressFormComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule],
-      declarations: [AddressFormComponent],
+      declarations: [AddressFormComponent]
     }).compileComponents();
   }));
 

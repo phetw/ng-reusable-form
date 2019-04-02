@@ -7,7 +7,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 const declarations = [AddressFormComponent];
 
 @NgModule({
-  declarations: declarations,
+  declarations,
   imports: [CommonModule, ReactiveFormsModule, NgSelectModule],
   exports: declarations
 })

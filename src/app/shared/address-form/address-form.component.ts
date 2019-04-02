@@ -9,7 +9,7 @@ import { ICountry } from 'src/app/core/model/country.model';
 @Component({
   selector: 'app-address-form',
   templateUrl: './address-form.component.html',
-  styleUrls: ['./address-form.component.css'],
+  styleUrls: ['./address-form.component.css']
 })
 export class AddressFormComponent implements OnInit {
   @Input() parentForm: FormGroup;
@@ -18,7 +18,7 @@ export class AddressFormComponent implements OnInit {
   country$: Observable<ICountry[]>;
   company: Array<string> = MockCompanyList;
 
-  constructor(private _fb: FormBuilder, private countryService: CountryService) {}
+  constructor(private formBuilder: FormBuilder, private countryService: CountryService) {}
 
   ngOnInit() {
     this.getCountry();
@@ -28,13 +28,13 @@ export class AddressFormComponent implements OnInit {
   }
 
   createAddressFormInstance(): FormGroup {
-    return this._fb.group({
+    return this.formBuilder.group({
       company: [null, [Validators.required]],
       street: ['', [Validators.required]],
       city: ['', [Validators.required]],
       state: ['', [Validators.required]],
       country: [null, [Validators.required]],
-      zip: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(5), Validators.pattern('^[0-9]*$')]],
+      zip: [null, [Validators.required, Validators.minLength(5), Validators.maxLength(5), Validators.pattern('^[0-9]*$')]]
     });
   }
 
